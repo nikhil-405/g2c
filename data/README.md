@@ -1,0 +1,1 @@
+The data used to train the model can be found [here](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset).
