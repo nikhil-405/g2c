@@ -7,9 +7,8 @@ import cv2
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
 
-
 def reconstruct(L_sample, probs):
-    cluster_centers = np.load(r"")
+    cluster_centers = np.load(r"assets\ab_clusters.npy")
 
     L_np = L_sample.detach().cpu().numpy() # [B, 1, H, W]
     probs_np = probs.detach().cpu().numpy() # [B, 313, H, W]
@@ -44,8 +43,8 @@ def reconstruct(L_sample, probs):
 
 
 def infer_and_show(image_url, model, reconstruct_fn, device, img_size = (256, 256)):
+    # 1) download image
     try:
-        # 1) download image
         response = requests.get(image_url)
         img = Image.open(BytesIO(response.content)).convert('RGB')
     except Exception as e:
@@ -76,7 +75,7 @@ def infer_and_show(image_url, model, reconstruct_fn, device, img_size = (256, 25
     plt.figure(figsize = (10, 5))
     plt.subplot(1, 2, 1)
     plt.imshow(L_gray.cpu().numpy())
-    plt.title("Input Grayscale")
+    plt.title("Input Grayscale Image")
     plt.axis('off')
 
     plt.subplot(1, 2, 2)
