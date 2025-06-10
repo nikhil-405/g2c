@@ -2,3 +2,6 @@
 .code 
 .env
 *.exe
+g2c.egg-info
+__pycache__
+*.pyc
