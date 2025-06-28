@@ -1,1 +1,1 @@
-The data used to train the model can be found [here](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset).
+The model is trained on the [COCO dataset](https://www.kaggle.com/datasets/awsaf49/coco-2017-dataset), which contains a wide variety of images for robust colorization performance.
